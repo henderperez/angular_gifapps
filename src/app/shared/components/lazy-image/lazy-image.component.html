@@ -1,0 +1,12 @@
+<img 
+    [src]="url" 
+    (load) = "onLoad()"
+    [ngStyle]="{style: hasLoaded ? '' : 'none'}"
+    class="card-img-top animate__animated animate__fadeIn" alt="...">
+
+<div *ngIf="!hasLoaded" class="d-flex justify-content-center aling-items-center">
+    <div class="spinner-border text-warning m-3" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+

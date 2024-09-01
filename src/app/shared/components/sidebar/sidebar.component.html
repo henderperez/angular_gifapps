@@ -1,0 +1,24 @@
+<div class="bg-dark border-right p-3" id="sidebar">
+    <h3 class="text-light">GifsApp</h3>
+    <hr class="text-white">
+    <div class="list-group list-reset">
+        <button class="list-group-item list-group-item-action"
+            *ngFor="let tag of tagHistory"
+            (click) = "searchTag(tag)">
+            {{ tag | titlecase }}
+        </button>
+        <ng-template [ngIf]="tagHistory.length > 0" [ngIfElse]="voidList">
+            <hr class="list-group-item list-group-item-action">
+        <button  class="list-group-item list-group-item-action"
+            (click) = "clearLocalStorage()">
+            Clear List
+        </button>
+        </ng-template>
+        <ng-template #voidList>
+            <div>
+              <span class="text-white">Please friend, search something...</span>
+            </div>
+          </ng-template>
+    </div>
+
+</div>
